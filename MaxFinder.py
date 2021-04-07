@@ -28,5 +28,23 @@ for index,row in df.iterrows():
         if final_list[len(final_list)-1]["Solar"]<row['Solar']:
             final_list[len(final_list)-1]["Solar"] = row['Solar']
 
+final_list.remove(final_list[0])
+
+def list_to_date(date_list):
+    date_name = "{}/{}".format(date_list[0],date_list[1])
+    return date_name
+
 for row in final_list:
+    row["Date"]= list_to_date(row["Date"])
     print(row)
+
+
+print(final_list)
+
+final_df = pd.DataFrame(final_list)
+
+print(final_df)
+
+final_df.to_excel(r"./Output.xlsx",index = None, header=True)
+print("Successfully created file")
+
