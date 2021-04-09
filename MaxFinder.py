@@ -1,5 +1,4 @@
-# importing csv module
-import csv
+
 import os
 import pandas as pd
 
@@ -12,11 +11,11 @@ def list_to_date(date_list):
 
 
 if __name__ =="__main__":
-    starting_year = 2004
+    starting_year = 1990
     ending_year = 2021
     filename = "./Weather.csv"
 
-    df = pd.read_csv (filename)   #read the csv file (put 'r' before the path string to address any special characters in the path, such as '\'). Don't forget to put the file name at the end of the path + ".csv"
+    df = pd.read_csv (filename) 
 
     final_list = [{"Date":[1,1990],"Max Temperature":0,"Min Temperature":0,"Precipitation":0,"Wind":0,"Relative Humidity":0,"Solar":0}]
 
